@@ -151,7 +151,7 @@ class _CustomerServiceState extends State<CustomerService> {
                           Color.fromRGBO(3, 100, 173, 1),
                           Color.fromRGBO(3, 100, 173, 1),
                           'Bot Chat',
-                          '/lets_get_started',
+                          '/',
                           ''),
                     ],
                   ),
