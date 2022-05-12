@@ -95,8 +95,12 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                       SizedBox(
                         height: height * 0.05,
                       ),
-                      expandedButton(Color.fromRGBO(255, 255, 255, 1),
-                          'Send Code', '/recovery_code', emailController.text)
+                      expandedButton(
+                          Color.fromRGBO(3, 100, 173, 1),
+                          Color.fromRGBO(255, 255, 255, 1),
+                          'Send Code',
+                          '/recovery_code',
+                          emailController.text)
                     ],
                   ),
                 ),

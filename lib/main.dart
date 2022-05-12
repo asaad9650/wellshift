@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: const Color.fromRGBO(187, 223, 250, 1),
       ),
-      initialRoute: '/',
+      initialRoute: '/recover_password',
       getPages: Routes.routes,
     );
   }

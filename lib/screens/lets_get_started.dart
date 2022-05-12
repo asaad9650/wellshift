@@ -36,7 +36,7 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
     "Happy",
     "Joyful"
   ];
-  
+
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -164,7 +164,11 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
                         height: height * 0.05,
                       ),
                       expandedButton(
-                          Color.fromRGBO(255, 255, 255, 1), 'Send', '/', ''),
+                          Color.fromRGBO(3, 100, 173, 1),
+                          Color.fromRGBO(255, 255, 255, 1),
+                          'Send',
+                          '/customer_service',
+                          ''),
                       SizedBox(
                         height: height * 0.05,
                       ),

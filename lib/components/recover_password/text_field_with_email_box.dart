@@ -31,7 +31,7 @@ Widget textfieldWithEmailBox(
           Text(
             text,
             style: TextStyle(
-              fontSize: 21.333333333333332,
+              fontSize: width * 0.04,
               color: textColor,
               fontWeight: FontWeight.w400,
             ),
@@ -45,7 +45,7 @@ Widget textfieldWithEmailBox(
             obscureText: is_password,
             style: TextStyle(
               fontSize: 17.333333333333332,
-              color: hintTextColor,
+              color: textColor,
               fontWeight: FontWeight.w400,
             ),
             keyboardType: TextInputType.emailAddress,

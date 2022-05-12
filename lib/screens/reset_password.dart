@@ -113,8 +113,12 @@ class _ResetPassowrdState extends State<ResetPassowrd> {
                       SizedBox(
                         height: height * 0.05,
                       ),
-                      expandedButton(Color.fromRGBO(255, 255, 255, 1),
-                          'Reset password', '/', "")
+                      expandedButton(
+                          Color.fromRGBO(3, 100, 173, 1),
+                          Color.fromRGBO(255, 255, 255, 1),
+                          'Reset password',
+                          '/',
+                          "")
                     ],
                   ),
                 ),

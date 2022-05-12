@@ -100,8 +100,12 @@ class _DelayCheckInState extends State<DelayCheckIn> {
                       SizedBox(
                         height: height * 0.05,
                       ),
-                      expandedButton(Color.fromRGBO(255, 255, 255, 1), 'Send',
-                          '/lets_get_started', ''),
+                      expandedButton(
+                          Color.fromRGBO(3, 100, 173, 1),
+                          Color.fromRGBO(255, 255, 255, 1),
+                          'Send',
+                          '/lets_get_started',
+                          ''),
                       SizedBox(
                         height: height * 0.05,
                       ),

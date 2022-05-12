@@ -156,8 +156,12 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                       SizedBox(
                         height: height * 0.05,
                       ),
-                      expandedButton(Color.fromRGBO(255, 255, 255, 1),
-                          'Submit Code', '/reset_password', ''),
+                      expandedButton(
+                          Color.fromRGBO(3, 100, 173, 1),
+                          Color.fromRGBO(255, 255, 255, 1),
+                          'Submit Code',
+                          '/reset_password',
+                          ''),
                       SizedBox(
                         height: height * 0.03,
                       ),

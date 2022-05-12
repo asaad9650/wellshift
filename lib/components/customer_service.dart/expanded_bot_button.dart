@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Widget expandedButton(Color backgroundColor, Color color, String text,
-    String route, String data) {
+Widget botChatButton(double width, Color color, Color borderColor,
+    Color textColor, String text, String route, String data) {
   return Row(
     children: [
       Expanded(
         child: ElevatedButton(
           onPressed: () {
-            // debugPrint('ElevatedButton Clicked');
             Get.toNamed(route, arguments: data);
           },
           child: Padding(
@@ -16,20 +15,23 @@ Widget expandedButton(Color backgroundColor, Color color, String text,
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 21,
-                fontWeight: FontWeight.w500,
-                color: color,
+                fontSize: width * 0.05,
+                fontWeight: FontWeight.w600,
+                color: textColor,
               ),
             ),
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(
-              backgroundColor,
+              color,
             ),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                // side: BorderSide(color: Colors.red),
+                side: BorderSide(
+                  color: borderColor,
+                  width: 2,
+                ),
               ),
             ),
           ),
