@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:wellshift/components/buttons/skip_button.dart';
 import 'package:wellshift/components/progress_page/suggestion_box.dart';
 import 'package:wellshift/components/progress_page/support_and_contact_buttons.dart';
 import 'package:wellshift/popups/welcome_popup.dart';
 
-class ProgressPage extends StatelessWidget {
+class ProgressPage extends StatefulWidget {
   const ProgressPage({Key? key}) : super(key: key);
+
+  @override
+  State<ProgressPage> createState() => _ProgressPageState();
+}
+
+class _ProgressPageState extends State<ProgressPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance!
+        .addPostFrameCallback((_) => welcomePopupDialog(context));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +28,7 @@ class ProgressPage extends StatelessWidget {
     return Stack(
       children: [
         Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Container(
             padding: const EdgeInsets.fromLTRB(8, 20, 8, 5),
             height: height,
@@ -90,6 +105,7 @@ class ProgressPage extends StatelessWidget {
                           text: 'Meditation'),
                       SizedBox(
                         width: width * 0.04,
+                        height: height * 0.2,
                       ),
                       suggestions(
                           height: height,
@@ -103,13 +119,19 @@ class ProgressPage extends StatelessWidget {
                   ),
                   Wrap(
                     children: [
-                      suggestions(
-                          height: height,
-                          width: width,
-                          filename: 'assets/icons/Rectangle 14.png',
-                          text: 'Music'),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/music');
+                        },
+                        child: suggestions(
+                            height: height,
+                            width: width,
+                            filename: 'assets/icons/Rectangle 14.png',
+                            text: 'Music'),
+                      ),
                       SizedBox(
                         width: width * 0.04,
+                        height: height * 0.2,
                       ),
                       suggestions(
                           height: height,
@@ -119,7 +141,7 @@ class ProgressPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: height * 0.15,
+                    height: height * 0.08,
                   ),
                   skipButton("Skip", const Color.fromRGBO(232, 145, 51, 1),
                       FontWeight.w600, '/delay_check_in'),
@@ -132,7 +154,7 @@ class ProgressPage extends StatelessWidget {
                   //   ),
                   // ),
                   SizedBox(
-                    height: height * 0.06,
+                    height: height * 0.01,
                   ),
                 ],
               ),

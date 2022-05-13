@@ -52,7 +52,7 @@ class _emojiWithTextState extends State<emojiWithText> {
               widget.text,
               // "Angery",
               style: TextStyle(
-                fontSize: 18.666666666666668,
+                fontSize: 16,
                 color: select ? widget.selectedColor : widget.unSelectedColor,
                 fontWeight: select ? FontWeight.w700 : FontWeight.w500,
               ),

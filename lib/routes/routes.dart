@@ -4,6 +4,7 @@ import 'package:wellshift/screens/customer_service.dart';
 import 'package:wellshift/screens/delay_check_in.dart';
 import 'package:wellshift/screens/lets_get_started.dart';
 import 'package:wellshift/screens/progress_page.dart';
+import 'package:wellshift/screens/recommended_music.dart';
 import 'package:wellshift/screens/recovery_code.dart';
 import 'package:wellshift/screens/recover_password.dart';
 import 'package:wellshift/screens/reset_password.dart';
@@ -70,6 +71,14 @@ class Routes {
     GetPage(
       name: '/support_groups',
       page: () => SupportGroups(),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(
+        microseconds: 400000,
+      ),
+    ),
+    GetPage(
+      name: '/music',
+      page: () => Music(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
         microseconds: 400000,

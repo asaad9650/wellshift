@@ -47,7 +47,7 @@ welcomePopupDialog(BuildContext context) {
                       "Welcome back, Abeer!",
                       style: GoogleFonts.inter(
                         textStyle: const TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontWeight: FontWeight.w600,
                           color: Color.fromRGBO(3, 100, 173, 1),
                         ),
@@ -66,7 +66,7 @@ welcomePopupDialog(BuildContext context) {
                       "Let’s start your check-in",
                       style: GoogleFonts.inter(
                         textStyle: const TextStyle(
-                          fontSize: 18.666666666666668,
+                          fontSize: 16,
                           fontWeight: FontWeight.w400,
                           color: Color.fromRGBO(3, 100, 173, 1),
                         ),
@@ -89,9 +89,10 @@ welcomePopupDialog(BuildContext context) {
                               padding: EdgeInsets.all(13.0),
                               child: Text(
                                 'Maybe Later',
+                                textAlign: TextAlign.center,
                                 style: GoogleFonts.inter(
                                   textStyle: const TextStyle(
-                                    fontSize: 18.666666666666668,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w500,
                                     color: Color.fromRGBO(2, 143, 197, 1),
                                   ),
@@ -135,9 +136,10 @@ welcomePopupDialog(BuildContext context) {
                               padding: EdgeInsets.all(13.0),
                               child: Text(
                                 'Start now',
+                                textAlign: TextAlign.center,
                                 style: GoogleFonts.inter(
                                   textStyle: const TextStyle(
-                                    fontSize: 18.666666666666668,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),

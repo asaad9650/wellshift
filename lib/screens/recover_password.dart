@@ -14,6 +14,7 @@ class RecoverPassword extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -76,8 +77,9 @@ class RecoverPassword extends StatelessWidget {
                         height: height * 0.05,
                       ),
                       expandedButton(
-                          Color.fromRGBO(3, 100, 173, 1),
-                          Color.fromRGBO(255, 255, 255, 1),
+                          height,
+                          const Color.fromRGBO(3, 100, 173, 1),
+                          const Color.fromRGBO(255, 255, 255, 1),
                           'Send Code',
                           '/recovery_code',
                           emailController.text)

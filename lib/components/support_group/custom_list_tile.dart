@@ -51,18 +51,22 @@ Widget customListTile(
                         color: headingColor,
                       ),
                     ),
-                    Image.asset(
-                      "assets/icons/join.png",
+                    Flexible(
+                      child: Image.asset(
+                        "assets/icons/join.png",
+                      ),
                     ),
                   ],
                 ),
                 Row(children: [
-                  Text(
-                    descriptionText,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
-                      color: descriptionColor,
+                  Flexible(
+                    child: Text(
+                      descriptionText,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: descriptionColor,
+                      ),
                     ),
                   )
                 ]),

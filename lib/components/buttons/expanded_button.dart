@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Widget expandedButton(Color backgroundColor, Color color, String text,
-    String route, String data) {
+Widget expandedButton(double height, Color backgroundColor, Color color,
+    String text, String route, String data) {
   return Row(
     children: [
       Expanded(
@@ -12,11 +12,11 @@ Widget expandedButton(Color backgroundColor, Color color, String text,
             Get.toNamed(route, arguments: data);
           },
           child: Padding(
-            padding: const EdgeInsets.all(13.0),
+            padding: EdgeInsets.all(height * 0.015),
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 21,
+                fontSize: 18,
                 fontWeight: FontWeight.w500,
                 color: color,
               ),

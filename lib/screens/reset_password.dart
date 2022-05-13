@@ -24,6 +24,7 @@ class ResetPassword extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -125,6 +126,7 @@ class ResetPassword extends StatelessWidget {
                         height: height * 0.05,
                       ),
                       expandedButton(
+                          height,
                           Color.fromRGBO(3, 100, 173, 1),
                           Color.fromRGBO(255, 255, 255, 1),
                           'Reset password',

@@ -36,6 +36,7 @@ class _suggestionsState extends State<suggestions> {
           ),
           child: Image.asset(
             widget.filename,
+            fit: BoxFit.contain,
           ),
         ),
         Positioned(

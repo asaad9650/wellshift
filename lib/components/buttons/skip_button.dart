@@ -10,7 +10,7 @@ Widget skipButton(
     child: Text(
       text,
       style: TextStyle(
-        fontSize: 21.333333333333332,
+        fontSize: 18,
         color: color,
         fontWeight: fontWeight,
       ),

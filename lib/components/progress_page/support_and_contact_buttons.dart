@@ -22,8 +22,9 @@ Widget supportAndContact(double height, double width) {
                   ),
                   const Text(
                     "Contact team",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 18.666666666666668,
+                      fontSize: 16,
                       color: Color.fromRGBO(3, 100, 173, 1),
                       fontWeight: FontWeight.w400,
                     ),
@@ -52,8 +53,9 @@ Widget supportAndContact(double height, double width) {
                   ),
                   const Text(
                     "Support group",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 18.666666666666668,
+                      fontSize: 16,
                       color: Color.fromRGBO(3, 100, 173, 1),
                       fontWeight: FontWeight.w400,
                     ),

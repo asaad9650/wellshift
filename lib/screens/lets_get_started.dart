@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wellshift/components/app_bar/back_button_with_text.dart';
@@ -36,11 +37,22 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
     "Happy",
     "Joyful"
   ];
+  List dropDown = [
+    'Be more present',
+    'Connect with others',
+    'Have more ease in my mind',
+    'Boost my productivity',
+    'Have a better sleep',
+    'Eat more healthy food',
+    'Other',
+  ];
+  String? selectedValue;
 
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -106,7 +118,7 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
                           shrinkWrap: true,
                           // scrollDirection: Axis.horizontal,
                           itemCount: reaction_name.length,
-                          gridDelegate: width < 400
+                          gridDelegate: width < 350
                               ? const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 3,
                                   crossAxisSpacing: 0,
@@ -130,6 +142,92 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
                         height: height * 0.02,
                       ),
 
+                      const Text(
+                        'What is your goal? (3 Choices or more)',
+                        style: TextStyle(
+                          color: Color.fromRGBO(3, 100, 173, 1),
+                          fontSize: 16,
+                        ),
+                      ),
+
+                      const SizedBox(
+                        height: 5,
+                      ),
+
+                      Container(
+                        width: width * 0.9,
+                        decoration: BoxDecoration(
+                          color: Color.fromRGBO(250, 251, 255, 1),
+                          border: Border.all(
+                            width: 1.5,
+                            color: Color.fromRGBO(3, 100, 173, 0.4),
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(8.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DropdownButtonHideUnderline(
+                                child: DropdownButton2(
+                                  items: dropDown
+                                      .map((item) => DropdownMenuItem<String>(
+                                            value: item,
+                                            child: Row(
+                                              children: [
+                                                if (selectedValue == null)
+                                                  Checkbox(
+                                                    value: false,
+                                                    onChanged: (v) {},
+                                                  ),
+                                                Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ))
+                                      .toList(),
+                                  hint: const Text(
+                                    'Select 3 goals',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color.fromRGBO(214, 214, 214, 1),
+                                    ),
+                                  ),
+                                  value: selectedValue,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      selectedValue = value as String;
+                                    });
+                                  },
+                                  buttonHeight: height * 0.04,
+                                  buttonWidth: width * 0.9,
+                                  itemHeight: 40,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        'Write a message for yourself!',
+                        style: TextStyle(
+                          color: Color.fromRGBO(3, 100, 173, 1),
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(250, 251, 255, 1),
@@ -149,12 +247,14 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: messageBox(
-                                    messageController: messageController,
-                                    textColor: Color.fromRGBO(1, 40, 69, 1),
-                                    hintColor: Color.fromRGBO(214, 214, 214, 1),
-                                    hintText: 'What is in your mind...',
-                                    maxLines: 3,
-                                    minLines: 3),
+                                  messageController: messageController,
+                                  textColor: const Color.fromRGBO(1, 40, 69, 1),
+                                  hintColor:
+                                      const Color.fromRGBO(214, 214, 214, 1),
+                                  hintText: 'What is in your mind...',
+                                  maxLines: 3,
+                                  minLines: 3,
+                                ),
                               ),
                             ],
                           ),
@@ -163,7 +263,12 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
                       SizedBox(
                         height: height * 0.05,
                       ),
+
+                      SizedBox(
+                        height: height * 0.05,
+                      ),
                       expandedButton(
+                          height,
                           Color.fromRGBO(3, 100, 173, 1),
                           Color.fromRGBO(255, 255, 255, 1),
                           'Send',

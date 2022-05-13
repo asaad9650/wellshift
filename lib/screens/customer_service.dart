@@ -18,6 +18,7 @@ class CustomerService extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -128,12 +129,14 @@ class CustomerService extends StatelessWidget {
                       // (EmailInputElement.supported)
                       (messageContent.text.isEmpty)
                           ? expandedButton(
+                              height,
                               Color.fromRGBO(222, 239, 252, 1),
                               Color.fromRGBO(144, 205, 252, 1),
                               'Send',
                               '/support_groups',
                               '')
                           : expandedButton(
+                              height,
                               Color.fromRGBO(3, 100, 173, 1),
                               Color.fromRGBO(255, 255, 255, 1),
                               'Send',

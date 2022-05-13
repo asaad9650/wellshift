@@ -23,6 +23,7 @@ class RecoveryCode extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -115,6 +116,7 @@ class RecoveryCode extends StatelessWidget {
                         height: height * 0.05,
                       ),
                       expandedButton(
+                          height,
                           Color.fromRGBO(3, 100, 173, 1),
                           Color.fromRGBO(255, 255, 255, 1),
                           'Submit Code',
