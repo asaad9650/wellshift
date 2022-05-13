@@ -4,16 +4,22 @@ import 'package:wellshift/components/app_bar/back_button_with_text.dart';
 import 'package:wellshift/components/buttons/expanded_button.dart';
 import 'package:wellshift/components/recover_password/text_field_with_email_box.dart';
 
-class ResetPassowrd extends StatefulWidget {
-  const ResetPassowrd({Key? key}) : super(key: key);
+// class ResetPassowrd extends StatefulWidget {
+//   const ResetPassowrd({Key? key}) : super(key: key);
 
-  @override
-  State<ResetPassowrd> createState() => _ResetPassowrdState();
-}
+//   @override
+//   State<ResetPassowrd> createState() => _ResetPassowrdState();
+// }
 
-TextEditingController password_controller = TextEditingController();
+//
 
-class _ResetPassowrdState extends State<ResetPassowrd> {
+// class _ResetPassowrdState extends State<ResetPassowrd> {
+// }
+
+class ResetPassword extends StatelessWidget {
+  ResetPassword({Key? key}) : super(key: key);
+  TextEditingController password_controller = TextEditingController();
+
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -100,16 +106,21 @@ class _ResetPassowrdState extends State<ResetPassowrd> {
                         height: height * 0.035,
                       ),
                       textfieldWithEmailBox(
-                          height,
-                          width,
-                          'Password',
-                          '\u2022\u2022\u2022\u2022\u2022\u2022\u2022',
-                          Color.fromRGBO(132, 175, 209, 0.75), //borderColor
-                          Color.fromRGBO(231, 245, 247, 1), //backgroundColor
-                          Color.fromRGBO(110, 158, 194, 1), //textColor
-                          Color.fromRGBO(132, 175, 209, 1), //hintTextColor
-                          password_controller,
-                          true),
+                          height: height,
+                          width: width,
+                          text: 'Password',
+                          hintText:
+                              '\u2022\u2022\u2022\u2022\u2022\u2022\u2022',
+                          borderColor:
+                              Color.fromRGBO(132, 175, 209, 0.75), //borderColor
+                          backgroundColor: Color.fromRGBO(
+                              231, 245, 247, 1), //backgroundColor
+                          textColor:
+                              Color.fromRGBO(110, 158, 194, 1), //textColor
+                          hintTextColor:
+                              Color.fromRGBO(132, 175, 209, 1), //hintTextColor
+                          emailController: password_controller,
+                          is_password: true),
                       SizedBox(
                         height: height * 0.05,
                       ),

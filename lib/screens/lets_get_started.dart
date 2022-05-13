@@ -149,12 +149,12 @@ class _LetsGetStartedState extends State<LetsGetStarted> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: messageBox(
-                                    messageController,
-                                    Color.fromRGBO(1, 40, 69, 1),
-                                    Color.fromRGBO(214, 214, 214, 1),
-                                    'What is in your mind...',
-                                    3,
-                                    3),
+                                    messageController: messageController,
+                                    textColor: Color.fromRGBO(1, 40, 69, 1),
+                                    hintColor: Color.fromRGBO(214, 214, 214, 1),
+                                    hintText: 'What is in your mind...',
+                                    maxLines: 3,
+                                    minLines: 3),
                               ),
                             ],
                           ),

@@ -5,16 +5,11 @@ import 'package:wellshift/components/app_bar/back_button_with_text.dart';
 import 'package:wellshift/components/buttons/expanded_button.dart';
 import 'package:wellshift/components/recover_password/text_field_with_email_box.dart';
 
-class RecoverPassword extends StatefulWidget {
-  const RecoverPassword({Key? key}) : super(key: key);
+class RecoverPassword extends StatelessWidget {
+  RecoverPassword({Key? key}) : super(key: key);
 
-  @override
-  State<RecoverPassword> createState() => _RecoverPasswordState();
-}
-
-class _RecoverPasswordState extends State<RecoverPassword> {
   TextEditingController emailController = TextEditingController();
-  @override
+
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -66,32 +61,17 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      // Container(
-                      //   decoration: BoxDecoration(
-                      //     color: Color.fromRGBO(231, 245, 247, 1),
-                      //     border: Border.all(
-                      //       width: 1.5,
-                      //       color: Color.fromRGBO(232, 145, 51, 0.3),
-                      //     ),
-                      //     borderRadius: const BorderRadius.all(
-                      //       Radius.circular(10.0),
-                      //     ),
-                      //   ),
-                      //   child: Padding(
-                      //       padding: const EdgeInsets.all(8.0),
-                      //       child: ),
-                      // ),
                       textfieldWithEmailBox(
-                          height,
-                          width,
-                          'Email',
-                          'example@example.com',
-                          Color.fromRGBO(232, 145, 51, 0.3),
-                          Color.fromRGBO(231, 245, 247, 1),
-                          Color.fromRGBO(110, 158, 194, 1),
-                          Color.fromRGBO(132, 175, 209, 1),
-                          emailController,
-                          false),
+                          height: height,
+                          width: width,
+                          text: 'Email',
+                          hintText: 'example@example.com',
+                          borderColor: Color.fromRGBO(232, 145, 51, 0.3),
+                          backgroundColor: Color.fromRGBO(231, 245, 247, 1),
+                          textColor: Color.fromRGBO(110, 158, 194, 1),
+                          hintTextColor: Color.fromRGBO(132, 175, 209, 1),
+                          emailController: emailController,
+                          is_password: false),
                       SizedBox(
                         height: height * 0.05,
                       ),

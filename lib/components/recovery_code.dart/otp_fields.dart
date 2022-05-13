@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class OtpInput extends StatelessWidget {
+class OtpInput extends StatefulWidget {
   final double height;
   final double width;
   final TextEditingController controller;
@@ -10,17 +10,22 @@ class OtpInput extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<OtpInput> createState() => _OtpInputState();
+}
+
+class _OtpInputState extends State<OtpInput> {
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height * 0.05,
-      width: width * 0.13,
+      height: widget.height * 0.05,
+      width: widget.width * 0.13,
       child: TextField(
-        autofocus: autoFocus,
+        autofocus: widget.autoFocus,
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
-        controller: controller,
+        controller: widget.controller,
         maxLength: 1,
-        style: TextStyle(
+        style: const TextStyle(
           color: Color.fromRGBO(132, 175, 209, 1),
           fontSize: 20,
         ),

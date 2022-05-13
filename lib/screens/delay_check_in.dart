@@ -5,14 +5,19 @@ import 'package:wellshift/components/buttons/expanded_button.dart';
 import 'package:wellshift/components/buttons/skip_button.dart';
 import 'package:wellshift/components/message_box/message_box.dart';
 
-class DelayCheckIn extends StatefulWidget {
-  const DelayCheckIn({Key? key}) : super(key: key);
+// class DelayCheckIn extends StatefulWidget {
+//   const DelayCheckIn({Key? key}) : super(key: key);
 
-  @override
-  State<DelayCheckIn> createState() => _DelayCheckInState();
-}
+//   @override
+//   State<DelayCheckIn> createState() => _DelayCheckInState();
+// }
 
-class _DelayCheckInState extends State<DelayCheckIn> {
+// class _DelayCheckInState extends State<DelayCheckIn> {
+//   }
+// }
+class DelayCheckIn extends StatelessWidget {
+  DelayCheckIn({Key? key}) : super(key: key);
+
   TextEditingController messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -86,12 +91,12 @@ class _DelayCheckInState extends State<DelayCheckIn> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: messageBox(
-                                    messageController,
-                                    Color.fromRGBO(1, 40, 69, 1),
-                                    Color.fromRGBO(214, 214, 214, 1),
-                                    'What is in your mind...',
-                                    3,
-                                    3),
+                                    messageController: messageController,
+                                    textColor: Color.fromRGBO(1, 40, 69, 1),
+                                    hintColor: Color.fromRGBO(214, 214, 214, 1),
+                                    hintText: 'What is in your mind...',
+                                    maxLines: 3,
+                                    minLines: 3),
                               ),
                             ],
                           ),

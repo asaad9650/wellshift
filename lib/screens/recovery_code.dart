@@ -5,58 +5,16 @@ import 'package:get/get.dart';
 import 'package:wellshift/components/app_bar/back_button_with_text.dart';
 import 'package:wellshift/components/buttons/expanded_button.dart';
 import 'package:wellshift/components/recovery_code.dart/otp_fields.dart';
+import 'package:wellshift/components/recovery_code.dart/timer_counter.dart';
 
-class RecoveryCode extends StatefulWidget {
-  const RecoveryCode({Key? key}) : super(key: key);
-
-  @override
-  State<RecoveryCode> createState() => _RecoveryCodeState();
-}
-
-class _RecoveryCodeState extends State<RecoveryCode> {
+class RecoveryCode extends StatelessWidget {
+  RecoveryCode({Key? key}) : super(key: key);
   final TextEditingController _fieldOne = TextEditingController();
   final TextEditingController _fieldTwo = TextEditingController();
   final TextEditingController _fieldThree = TextEditingController();
   final TextEditingController _fieldFour = TextEditingController();
   final TextEditingController _fieldFive = TextEditingController();
   final TextEditingController _fieldSix = TextEditingController();
-
-  String? _otp;
-
-  Timer? _timer;
-  int start = 60;
-
-  void startTimer() {
-    const oneSec = const Duration(seconds: 1);
-    _timer = new Timer.periodic(
-      oneSec,
-      (Timer timer) {
-        if (start == 0) {
-          setState(() {
-            timer.cancel();
-          });
-        } else {
-          setState(() {
-            start--;
-          });
-        }
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    startTimer();
-    // final seconds = strDigits(myDuration.inSeconds.remainder(60));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,8 +125,8 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
+                        children: const [
+                          Text(
                             "Didn’t get the code? ",
                             style: TextStyle(
                               fontSize: 18.666666666666668,
@@ -176,14 +134,7 @@ class _RecoveryCodeState extends State<RecoveryCode> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          Text(
-                            "$start sec",
-                            style: const TextStyle(
-                              fontSize: 18.666666666666668,
-                              color: Color.fromRGBO(214, 108, 94, 1),
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
+                          timerCounter()
                         ],
                       )
                     ],
