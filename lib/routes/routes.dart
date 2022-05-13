@@ -16,7 +16,7 @@ class Routes {
       page: () => const ProgressPage(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -24,7 +24,7 @@ class Routes {
       page: () => RecoverPassword(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -32,7 +32,7 @@ class Routes {
       page: () => RecoveryCode(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -40,7 +40,7 @@ class Routes {
       page: () => ResetPassword(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -48,7 +48,7 @@ class Routes {
       page: () => DelayCheckIn(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -56,7 +56,7 @@ class Routes {
       page: () => LetsGetStarted(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -64,7 +64,7 @@ class Routes {
       page: () => CustomerService(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
     GetPage(
@@ -72,7 +72,7 @@ class Routes {
       page: () => SupportGroups(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(
-        microseconds: 500000,
+        microseconds: 400000,
       ),
     ),
   ];
